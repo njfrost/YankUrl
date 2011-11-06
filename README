@@ -1,0 +1,4 @@
+YankURL is a server that generates a pair of bookmarklets for users.  The "Copy" bookmarklet copies the current website and saves it to the user's clipboard.  The "Paste" bookmarklet redirects the current page to the last URL that was copied on to the clipboard.
+
+Running the Server:
+TODO
