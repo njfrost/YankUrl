@@ -1,0 +1,18 @@
+javascript:(
+function()
+{
+    f='http://localhost:7979/njfrost?url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title);
+    a=function()
+    {
+        if(!window.open(f))
+            location.href=f+'jump=yes'
+    };
+    if(/Firefox/.test(navigator.userAgent))
+    {
+        setTimeout(a,0)
+    }
+    else
+    {
+        a()
+    }
+})()
