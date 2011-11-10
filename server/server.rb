@@ -42,7 +42,7 @@ class Controller < Sinatra::Base
   end
   
   get %r{^/add/([a-zA-Z0-9-]+)$} do |name|
-    haml :userPage, :locals => { :userName => name, :pasteURL => pasteURL name, :copyURL => copyURL name } 
+    haml :userPage, :locals => { :userName => name, :pasteURL => pasteURL(name), :copyURL => copyURL(name) } 
   end
   get '/*/p/*' do |name, url|
     save_page name,url

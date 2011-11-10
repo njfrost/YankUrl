@@ -10,4 +10,4 @@ We're now using Ruby 1.9.2 which we manage with rvm:
         rvm 1.9.2
 
 Launch the server with this bundle command:
-        bundle exec rackup -s thin -p 4567
+        bundle exec rackup -s thin -p 9989
