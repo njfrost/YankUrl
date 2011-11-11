@@ -7,7 +7,8 @@ class Controller < Sinatra::Base
   root_path = File.dirname(File.dirname(__FILE__))
   APP_PORT = "9989"
   APP_ROOT = Pathname.new(root_path).realpath.to_s #find full path to this file
-  APP_DOMAIN = "localhost:#{APP_PORT}" #Can this be pushed to a higher level, Bundler.require?
+  APP_DOMAIN = "http://localhost:#{APP_PORT}" #Can this be pushed to a higher level, Bundler.require?
+  RE_USER = "[a-zA-Z0-9-]+"
 
   set :keys, "#{APP_ROOT}/keys"
   set :views, "#{APP_ROOT}/server/views"
@@ -35,16 +36,16 @@ class Controller < Sinatra::Base
   end
 
   get '/' do
-    haml :userPage, :locals => { :userName => "default" } 
+    haml :userPage, :locals => { :userName => "SomeRandomUser" } 
   end
-  get %r{^/([a-zA-Z0-9-]+)$} do |name|
+  get %r{^/([a-zA-Z0-9-]+)/p/$} do |name|
     redirect redirect_page name unless false 
   end
   
   get %r{^/add/([a-zA-Z0-9-]+)$} do |name|
     haml :userPage, :locals => { :userName => name, :pasteURL => pasteURL(name), :copyURL => copyURL(name) } 
   end
-  get '/*/p/*' do |name, url|
+  get '/*/c/*' do |name, url|
     save_page name,url
   end
 end
