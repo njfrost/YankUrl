@@ -2,6 +2,9 @@ YankURL is a server that generates a pair of bookmarklets for users.  The "Copy"
 
 Running the Server:
 
+Create keys directory:
+        mkdir keys
+
 The server is a ruby bundle. Get the bundler and then use it to get everything else:
         sudo gem install bundler
         sudo bundle install
