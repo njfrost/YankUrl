@@ -5,5 +5,9 @@
                 %a{:href => "javascript:(function(){f='#{locals[:copyURL]}'+encodeURIComponent(window.location.href);a=function(){if(!window.open(f))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()" }
                         Copy URL
                 %br
+                Copy URL Code:
+                %br
+                javascript:(function(){f='#{locals[:copyURL]}'+encodeURIComponent(window.location.href);a=function(){if(!window.open(f))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()
+                %br
                 %a{:href => locals[:pasteURL]}
                         Pase URL
