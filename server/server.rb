@@ -7,7 +7,7 @@ class Controller < Sinatra::Base
   root_path = File.dirname(File.dirname(__FILE__))
   #APP_PORT = "9989"
   APP_ROOT = Pathname.new(root_path).realpath.to_s #find full path to this file
-  APP_DOMAIN = "http://yankurl.heroku.com/" #Can this be pushed to a higher level, Bundler.require?
+  APP_DOMAIN = "http://yankurl.heroku.com" #Can this be pushed to a higher level, Bundler.require?
   #APP_DOMAIN = "http://localhost:9899" #Can this be pushed to a higher level, Bundler.require?
   RE_USER = "[a-zA-Z0-9-]+"
 
